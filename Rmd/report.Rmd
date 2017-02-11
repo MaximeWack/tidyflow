@@ -1,0 +1,23 @@
+---
+title:
+author:
+date:
+output:
+  _document:
+---
+
+```{r init, echo = F, message = F, warning = F}
+library(tidyverse)
+library(knitr)
+#library(rmarkdown)
+#library(pander)
+#library(DT)
+
+load("../results.Rdata")
+
+opts_chunk$set(echo = F,
+               message = F,
+               warning = F,
+               error = F)
+```
+
