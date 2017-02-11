@@ -6,6 +6,8 @@ It follows the project structure proposed by Hadley Wickham in [R for Data Scien
 
 ![](http://r4ds.had.co.nz/diagrams/data-science.png)
 
+*Image under [CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/3.0/us/)*
+
 ## Install
 
 `git clone https://www.github.com/maximewack/tidyflow new_project`
