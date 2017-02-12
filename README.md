@@ -10,12 +10,18 @@ It follows the project structure proposed by Hadley Wickham in [R for Data Scien
 
 ## Install
 
+If you are on github, simply fork the repo.
+
+If you don't want to use github as your remote, clone the depo in a new directory
+
 `git clone https://www.github.com/maximewack/tidyflow new_project`
 
-to clone the project into a new directory.  
-Don't forget to change the git remote origin to your own remote repo.
+Then change the git remote origin to your own remote repo. 
 
-The project already contains a *.gitignore* file for R projects.
+`git remote set-url your_repo_url`
+
+The project already contains a *.gitignore* file for R projects.  
+Add rules for your data files if you don't want them to be shared.
 
 Also run `install.packages(c("tidyverse", "rmarkdown", "knitr"))` to install the necessary dependencies.
 
