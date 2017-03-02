@@ -55,7 +55,7 @@ Having the data ready as simple csv is useful to always be able to start from th
 This step consists mostly of "non-destructive" data management: assign types to columns (factors with correct/human readable levels, dates, etc.), correct/censor obviously abnormal values and errors), transform between *long* and *wide* format, etc.  
 Useful packages here are `lubridate`, `stringr`, and `forcats`.
 
-The results are saved in a **tidy.Rdata** file.
+The results are saved in a **Data/tidy.rds** file.
 
 After this second step, you will have your full data ready to use in R and shouldn't have to run the first two steps anymore (unless you get hold of new data).
 
@@ -65,7 +65,7 @@ This script is for data transforming. It will contain all transformations of the
 Some "destructive" data management can occur here, such as dropping variables or observations, or modifying the levels of some factors.  
 Useful packages here are `forcats`, `lubridate`, and `stringr`.
 
-The results are saved in a **transformed.Rdata** file.
+The results are saved in a **Data/transformed.rds** file.
 
 ### 04_Analyze.R
 
@@ -73,7 +73,7 @@ This script will contain more data transforming, and the analyses with productio
 There is a bit of an overlap between **03_Transform.R** and **04_Analyze.R** as it is often an iterative process. Both files can be merged into one, but it can be useful to have some time-consuming transformations in a separate script and have the results handy.  
 Useful packages here are `broom`, `ggplot2`, and `modelr`.
 
-In this script *all* the "interesting results," full tables and ggplot graphs are included in a single hierarchical list, saved in a **results.Rdata** file.  
+In this script *all* the "interesting results," full tables and ggplot graphs are included in a single hierarchical list, saved in a **Data/results.rds** file.  
 All the results from the analyses should be saved as-is without transformation, so that every result can be used in the Rmd.
 Having all the results pre-computed for the Rmd means that it will take mere seconds to re-compile, while still having access to all the results if you want/need to use them somewhere in the manuscript/report.
 
