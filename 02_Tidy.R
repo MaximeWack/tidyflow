@@ -8,7 +8,6 @@ read_csv("Data/.csv") %>%
   select() %>%
   filter() %>%
   mutate() %>%
-  dmap_if(is.character, factor) -> df
-
+  dmap_if(is.character, factor) %>%
 # Save the tidy-ed data ----
-save(df, file = "tidy.Rdata")
+  saveRDS(file = "Data/tidy.rds")

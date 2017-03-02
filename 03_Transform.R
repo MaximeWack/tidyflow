@@ -4,10 +4,8 @@ library(tidyverse)
 # library(forcats)
 
 # Load the tidy-ed data ----
-load("tidy.Rdata")
-
-df %>%
-
+readRDS("Data/tidy.rds") %>%
+# Transform the data
 
 # Save the transformed data ----
-save(df, "transformed.Rdata")
+saveRDS("Data/transformed.rds")

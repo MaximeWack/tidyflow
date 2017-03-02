@@ -2,11 +2,11 @@ library(tidyverse)
 # library(broom)
 # library(modelr)
 
-# Load the transformed data ----
-load("transformed.Rdata")
-
 # Initialize an empty list to store the results ----
 results <- list()
+
+# Load the transformed data ----
+readRDS("Data/transformed.rds") -> df
 
 # Specific transformations ----
 
@@ -17,4 +17,4 @@ results <- list()
 # Plots ----
 
 # Save the results object ----
-save(results, file = "results.Rdata")
+saveRDS(results, file = "Data/results.rds")
