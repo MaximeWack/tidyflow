@@ -13,7 +13,8 @@ library(knitr)
 #library(pander)
 #library(DT)
 
-load("../results.Rdata")
+readRDS("../results.rds") %>%
+  list2env(envir = globalenv())
 
 opts_chunk$set(echo = F,
                message = F,
