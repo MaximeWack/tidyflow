@@ -13,7 +13,7 @@ library(knitr)
 #library(pander)
 #library(DT)
 
-readRDS("../results.rds") %>%
+readRDS("results.rds") %>%
   list2env(envir = globalenv())
 
 opts_chunk$set(echo = F,

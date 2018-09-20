@@ -1,0 +1,35 @@
+```{r libs}
+library(tidyverse)
+# library(broom)
+# library(modelr)
+```
+
+# Analyse
+
+Initialize an empty list to store the results
+
+```{r init list}
+results <- list()
+```
+
+The transformed data is imported into the global environment.
+
+```{r import}
+readRDS("Data/transformed.rds") %>%
+  list2env(envir = globalenv())
+```
+
+# Specific transformations
+
+# Models
+
+# Tables
+
+# Plots
+
+The result from the analyses is saved in an object to produce the report
+```{r export}
+results %>%
+  saveRDS(file = "results.rds")
+```
+

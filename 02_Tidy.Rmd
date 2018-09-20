@@ -1,0 +1,31 @@
+```{r libs}
+library(tidyverse)
+# library(lubridate)
+```
+
+# Tidy
+
+First the data are read from the flat file produced in the **Import** step.
+
+```{r import}
+read_csv("Data/.csv") -> data
+```
+
+This is where you would tidy your data.  
+This shouldn't contain destructive transformation of data, just handling of types and obvious errors.
+
+```{r tidy}
+data %>%
+  select() %>%
+  filter() %>%
+  mutate() %>%
+  mutate_if(is.character, factor) -> data
+```
+
+The data are then exported in Rds to keep the formatting.  
+You can export as many objects as you want, as long as they are inside a named list.
+
+```{r export}
+list(data = data) %>%
+  saveRDS(file = "Data/tidy.rds")
+```

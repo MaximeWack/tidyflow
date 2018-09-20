@@ -1,0 +1,23 @@
+```{r libs}
+library(tidyverse)
+#library(readxl)
+#library(haven)
+#library(rvest)
+#library(jsonlite)
+```
+
+# Import
+
+This is where you would import all of your data, from every source needed (flat files, excel files, database queries, etc.).
+
+```{r import}
+read_ ("Data/Raw/") -> data
+```
+
+All data should undergo a cursory check (are the types correctly attributed for example?), and be saved as-is in a flat file format (preferably csv).
+
+```{r export}
+data %>%
+  write.csv("Data/.csv", row.names = F)
+```
+

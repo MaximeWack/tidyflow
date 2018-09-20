@@ -27,30 +27,29 @@ Also run `install.packages(c("tidyverse", "rmarkdown", "knitr"))` to install the
 
 ## Directory structure
 
-The project contains three subdirectories: **Data/**, **Docs/** and **Rmd/**.  
+The project contains two subdirectories: **Data/** and **Docs/**.  
 **Data/** also contains a **Raw/** subdirectory.
 
 **Data/Raw/** should contain the raw data when they exist as files (csv, xls(x), SQLite databases, SAS files, SPSS files, etc.).
 
 **Docs/** should contain all external documents you have about the project (synopsis, context articles/presentations, etc.)
 
-**Rmd/** will contain the files used to communicate the results.
-
 ## Scripts
 
-Four scripts are already present, populated with boilerplate code for each of the steps.  
+Five scripts are already present, populated with boilerplate code for each of the steps.  
+Each of the scripts is an Rmd file, though they are not supposed to be knitted but more or less used like a notebook. (See [blogpost] for an idea of my workflow)
 Packages `dplyr`, `magrittr`, `tidyr`, and `purrr` can be useful all the way.
 
 **Every step makes a "savepoint" of your work, allowing you to rapidly iterate on any of the steps without having to re-run the previous ones (unless you've changed something up in the chain).**  
 
-### 01_Import.R
+### 01_Import.Rmd
 
 The first script is used to import raw data (whatever the source) and save a local csv copy in **Data/**.  
 Useful packages from the tidyverse here are `readr`, `readxl`, `rvest`, `haven`, and `jsonlite`.
 
 Having the data ready as simple csv is useful to always be able to start from the beginning, even if the original source is unavailable.
 
-### 02_Tidy.R
+### 02_Tidy.Rmd
 
 This step consists mostly of "non-destructive" data management: assign types to columns (factors with correct/human readable levels, dates, etc.), correct/censor obviously abnormal values and errors), transform between *long* and *wide* format, etc.  
 Useful packages here are `lubridate`, `stringr`, and `forcats`.
@@ -59,7 +58,7 @@ The results are saved in a **Data/tidy.rds** file.
 
 After this second step, you will have your full data ready to use in R and shouldn't have to run the first two steps anymore (unless you get hold of new data).
 
-### 03_Transform.R
+### 03_Transform.Rmd
 
 This script is for data transforming. It will contain all transformations of the data to make them ready for analyses.  
 Some "destructive" data management can occur here, such as dropping variables or observations, or modifying the levels of some factors.  
@@ -67,7 +66,7 @@ Useful packages here are `forcats`, `lubridate`, and `stringr`.
 
 The results are saved in a **Data/transformed.rds** file.
 
-### 04_Analyze.R
+### 04_Analyze.Rmd
 
 This script will contain more data transforming, and the analyses with production of the resulting tables and plots.  
 There is a bit of an overlap between **03_Transform.R** and **04_Analyze.R** as it is often an iterative process. Both files can be merged into one, but it can be useful to have some time-consuming transformations in a separate script and have the results handy.  
@@ -93,7 +92,7 @@ results
    └─ figure3
 ```
 
-### Rmd/report.Rmd
+### 05_Report.Rmd
 
 The Rmd file should not contain *any* literal values: every number, table, graph *has* to come from the results object (in its original form).  
 Only some really minor cosmetic modifications should be made then (running `prettyNum` on numerics or table columns, `select`/`filter`/`arrange`/`rename` on the full tables, etc.)  

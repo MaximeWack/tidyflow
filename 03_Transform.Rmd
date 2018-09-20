@@ -1,0 +1,32 @@
+```{r libs}
+library(tidyverse)
+# library(lubridate)
+```
+
+# Transform
+
+First the tidy-ed data are read from the Rds and exposed in the global environment.
+
+```{r import}
+readRDS("Data/tidy.rds") %>%
+  list2env(envir = globalenv())
+```
+
+This is where you would transform your data.  
+Destructive transformation are allowed here, feel free to experiment!
+
+```{r transform}
+data %>%
+  mutate() %>%
+  select() %>%
+  filter() -> data
+```
+
+Data are exported again in Rds, after transformation.
+
+```{r export}
+list(data = data) %>%
+  saveRDS("Data/transformed.rds")
+```
+
+
