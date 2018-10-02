@@ -16,7 +16,7 @@ If you don't want to use github as your remote, clone the depo in a new director
 
 `git clone https://www.github.com/maximewack/tidyflow new_project`
 
-Then change the git remote origin to your own remote repo. 
+Then change the git remote origin to your own remote repo.
 
 `git remote set-url your_repo_url`
 
@@ -37,10 +37,10 @@ The project contains two subdirectories: **Data/** and **Docs/**.
 ## Scripts
 
 Five scripts are already present, populated with boilerplate code for each of the steps.  
-Each of the scripts is an Rmd file, though they are not supposed to be knitted but more or less used like a notebook. (See [blogpost] for an idea of my workflow)
+Each of the scripts is an Rmd file, though they are not supposed to be knitted but more or less used like a notebook.  
 Packages `dplyr`, `magrittr`, `tidyr`, and `purrr` can be useful all the way.
 
-**Every step makes a "savepoint" of your work, allowing you to rapidly iterate on any of the steps without having to re-run the previous ones (unless you've changed something up in the chain).**  
+**Every step makes a "savepoint" of your work, allowing you to rapidly iterate on any of the steps without having to re-run the previous ones (unless you've changed something up in the chain).**
 
 ### 01_Import.Rmd
 
